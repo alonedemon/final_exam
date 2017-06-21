@@ -30,7 +30,7 @@ public class SellerService {
         sellerRepository.save(seller1);
     }
 
-    public void update(SellerController.SellerRequestDTOUpdate seller,long id){
+    public void update(SellerController.SellerRequestDTO seller,long id){
         Seller seller1=sellerRepository.findOne(id);
         seller1.setCi(seller.getCi());
         seller1.setFirstname(seller.getFirstname());

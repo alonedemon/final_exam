@@ -28,7 +28,7 @@ public class SellerController {
     }
 
     @RequestMapping(value ="{id}" ,method = RequestMethod.PUT)
-    public void updateSeller(@RequestBody SellerRequestDTOUpdate seller,@PathVariable long id){
+    public void updateSeller(@RequestBody SellerRequestDTO seller,@PathVariable long id){
         sellerService.update(seller,id);
     }
 
@@ -37,7 +37,7 @@ public class SellerController {
         sellerService.delete(id);
     }
 
-    public static class SellerRequestDTOUpdate{
+    public static class SellerRequestDTO{
         private int age;
         private String firstname;
         private String lastname;
@@ -58,13 +58,5 @@ public class SellerController {
         public int getCi() {
             return ci;
         }
-    }
-    public static class SellerRequestDTO extends SellerRequestDTOUpdate{
-        private int solds_cars;
-
-        public int getSolds_cars() {
-            return solds_cars;
-        }
-
     }
 }
